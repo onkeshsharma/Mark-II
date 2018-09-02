@@ -498,4 +498,3 @@ void motion(int x, int y) {
 	prev_mouse_y = y;
 };
 
-
