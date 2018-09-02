@@ -39,6 +39,10 @@
 #include "HUD.hpp"
 #include "ObstacleManager.hpp"
 
+#include"RectangularPrism.hpp"
+#include"TriangularPrism.hpp"
+#include"Cylinder.h"
+
 void display();
 void reshape(int width, int height);
 void idle();
@@ -153,6 +157,29 @@ void drawGoals()
 	}
 }
 
+
+
+void Test()
+{
+	/*RectangularPrism box1(0, 5, 0);
+	box1.setXLength(5);
+	box1.setYLength(10);
+	box1.setZLength(5);
+	box1.draw();
+	box1.setRotation(3);*/
+
+	/*TriangularPrism tri1(0, 5, 0);
+	tri1.setXLength(5);
+	tri1.setYLength(10);
+	tri1.setZLength(5);
+	tri1.draw();
+	tri1.setRotation(3);*/
+	
+	Cylinder wheel1(5, 10, 0.8, 0);
+	wheel1.draw();
+
+
+}
 void display() {
 	frameCounter++;
 	// -------------------------------------------------------------------------
@@ -194,6 +221,8 @@ void display() {
 
 	// draw HUD
 	HUD::Draw();
+	Test();
+	
 
 	glutSwapBuffers();
 };
@@ -497,4 +526,6 @@ void motion(int x, int y) {
 	prev_mouse_x = x;
 	prev_mouse_y = y;
 };
+
+
 
