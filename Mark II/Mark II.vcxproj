@@ -150,6 +150,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\Project10\RectangularPrism.hpp" />
+    <ClInclude Include="..\..\Project10\TrapPrism.hpp" />
+    <ClInclude Include="..\..\Project10\TriangularPrism.hpp" />
     <ClInclude Include="Camera.hpp" />
     <ClInclude Include="Frustum.hpp" />
     <ClInclude Include="Ground.hpp" />
@@ -167,6 +170,9 @@
     <ClInclude Include="Vehicle.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Project10\RectangularPrism.cpp" />
+    <ClCompile Include="..\..\Project10\TrapPrism.cpp" />
+    <ClCompile Include="..\..\Project10\TriangularPrism.cpp" />
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="Frustum.cpp" />
     <ClCompile Include="Ground.cpp" />
