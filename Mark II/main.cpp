@@ -21,9 +21,9 @@
 #else
 	#include <GL/gl.h>
 	#include <GL/glu.h>
-	#include <GL/glut.h>
+	#include <GL/glut.h> //commented out GL/
 	#include <unistd.h>
-	#include <sys/time.h>
+	#include <sys/time.h> //Commented out sys/
 #endif
 
 
