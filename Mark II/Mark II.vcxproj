@@ -151,6 +151,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Camera.hpp" />
+    <ClInclude Include="Cylinder.h" />
     <ClInclude Include="Frustum.hpp" />
     <ClInclude Include="Ground.hpp" />
     <ClInclude Include="HUD.hpp" />
@@ -159,15 +160,19 @@
     <ClInclude Include="Obstacle.hpp" />
     <ClInclude Include="ObstacleManager.hpp" />
     <ClInclude Include="Quaternion.hpp" />
+    <ClInclude Include="RectangularPrism.hpp" />
     <ClInclude Include="RemoteDataManager.hpp" />
     <ClInclude Include="Shape.hpp" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="TrapPrism.hpp" />
+    <ClInclude Include="TriangularPrism.hpp" />
     <ClInclude Include="VectorMaths.hpp" />
     <ClInclude Include="Vehicle.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="Cylinder.cpp" />
     <ClCompile Include="Frustum.cpp" />
     <ClCompile Include="Ground.cpp" />
     <ClCompile Include="HUD.cpp" />
@@ -177,6 +182,7 @@
     <ClCompile Include="Obstacle.cpp" />
     <ClCompile Include="ObstacleManager.cpp" />
     <ClCompile Include="Quaternion.cpp" />
+    <ClCompile Include="RectangularPrism.cpp" />
     <ClCompile Include="RemoteDataManager.cpp" />
     <ClCompile Include="Shape.cpp" />
     <ClCompile Include="stdafx.cpp">
@@ -185,6 +191,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="TriangularPrism.cpp" />
     <ClCompile Include="VectorMaths.cpp" />
     <ClCompile Include="Vehicle.cpp" />
   </ItemGroup>
