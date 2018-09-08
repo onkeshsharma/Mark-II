@@ -8,23 +8,12 @@ class RectangularPrism : public Shape {
 
 public:
 	RectangularPrism() {};
-	RectangularPrism(double x, double y, double z);
-	void draw();
-	void setXLength(double length);
-	void setYLength(double length);
-	void setZLength(double length);
-
-	double getXLength();
-	double getYLength();
-	double getZLength();  
-
-	//void Rotate(double angle);
-
-
-private:
+	RectangularPrism(double x, double y, double z, double xLength, double yLength ,double zLength);
 	double xLength;
 	double yLength;
 	double zLength;
+	void draw();
+	//void Rotate(double angle);
 
 };
 
