@@ -16,22 +16,30 @@
 #include <GL/glut.h>
 #endif
 
-RectangularPrism::RectangularPrism(double x, double y, double z)
+RectangularPrism::RectangularPrism(double x, double y, double z, double xLength, double yLength, double zLength)
 {
 	this->x = x;
 	this->y = y;
 	this->z = z;
+	this->xLength = xLength;
+	this->yLength = yLength;
+	this->zLength = zLength;
+
 };
 
 void RectangularPrism::draw()
 {
-	double xPos = getX();
-	double yPos = getY();
-	double zPos= getZ();
+	double xPos = x;
+	double yPos = y;
+	double zPos = z;
 
-	double halfXLen = getXLength()/2;
-	double halfYLen = getYLength()/2;
-	double halfZLen = getZLength()/2;
+	double height = xLength;
+	double length = yLength;
+	double width = zLength;
+
+	double halfXLen = height/2;
+	double halfYLen = length/2;
+	double halfZLen = width/2;
 
 	glBegin(GL_QUADS);
 
@@ -78,32 +86,7 @@ void RectangularPrism::draw()
 	glEnd();
 };
 
-void RectangularPrism::setXLength(double length)
-{
-	this->xLength = length;
-};
 
-void RectangularPrism::setYLength(double length)
-{
-	this->yLength = length;
-};
-
-void RectangularPrism::setZLength(double length)
-{
-	this->zLength = length;
-};
-double RectangularPrism::getXLength()
-{
-	return xLength;
-};
-double RectangularPrism::getYLength()
-{
-	return yLength;
-}
-double RectangularPrism::getZLength()
-{
-	return zLength;
-};
 
 
 

@@ -1,4 +1,4 @@
-#include "TriangularPrism.h"
+#include "TriangularPrism.hpp"
 #include <cmath>
 
 #ifdef __APPLE__
@@ -16,66 +16,86 @@
 #include <GL/glut.h>
 #endif
 
-TriangularPrism::TriangularPrism(double x, double y, double z, double xLength, double yLength, double zLength)
+
+TriangularPrism::TriangularPrism(double x, double y, double z)
 {
 	this->x = x;
 	this->y = y;
 	this->z = z;
-	this->xLength = xLength;
-	this->yLength = yLength;
-	this->zLength = zLength;
+}
 
+void TriangularPrism::SetHeight(double height)
+{
+	this->height = height;
+};
+
+void TriangularPrism::SetLength(double length)
+{
+	this->length = length;
+
+
+};
+
+void TriangularPrism::SetWidth(double width)
+{
+	this->width = width;
+};
+
+double TriangularPrism::GetHeight()
+{
+	return height;
+};
+
+double TriangularPrism::GetLength()
+{
+	return length;
+};
+
+double TriangularPrism::GetWidth()
+{
+	return width;
 };
 
 void TriangularPrism::draw()
 {
-	double xPos = x;
-	double yPos = y;
-	double zPos = z;
-	double height = xLength;
-	double length = yLength;
-	double width = zLength;
+	double xPos = getX();
+	double yPos = getY();
+	double zPos = getZ();
 
-	double halfheight = height / 2;
-	double halflength = length / 2;
-	double halfwidth = width / 2;
-	
+	double halflength = GetLength() / 2;
+	double halfwidth = GetWidth() / 2;
+	double halfheight = GetHeight() / 2;
+
 	glBegin(GL_TRIANGLES);
-	// triangular faces
-	glVertex3d(xPos - halfwidth, yPos - halflength, zPos - halfheight);
-	glVertex3d(xPos + halfwidth, yPos - halflength, zPos - halfheight);
-	glVertex3d(xPos, yPos - halflength, zPos + halfheight);
+		// triangular faces
+		glVertex3d(xPos - halfwidth, yPos - halflength,zPos - halfheight);
+		glVertex3d(xPos + halfwidth, yPos - halflength, zPos - halfheight);
+		glVertex3d(xPos, yPos - halflength, zPos + halfheight);
 
-	glVertex3d(xPos - halfwidth, yPos + halflength, zPos - halfheight);
-	glVertex3d(xPos + halfwidth, yPos + halflength, zPos - halfheight);
-	glVertex3d(xPos, yPos + halflength, zPos + halfheight);
+		glVertex3d(xPos - halfwidth, yPos + halflength, zPos - halfheight);
+		glVertex3d(xPos + halfwidth, yPos + halflength, zPos - halfheight);
+		glVertex3d(xPos , yPos + halflength, zPos + halfheight);	
 	glEnd();
 
+	
 	glBegin(GL_QUADS);
 	// rectangular base
-	glColor3d(255, 0, 0);
-	glVertex3d(xPos - halfwidth, yPos - halflength, zPos - halfheight);
-	glVertex3d(xPos + halfwidth, yPos - halflength, zPos - halfheight);
-	glVertex3d(xPos + halfwidth, yPos + halflength, zPos - halfheight);
-	glVertex3d(xPos - halfwidth, yPos + halflength, zPos - halfheight);
+		glColor3d(255, 0, 0);
+		glVertex3d(xPos - halfwidth, yPos - halflength, zPos - halfheight);
+		glVertex3d(xPos + halfwidth, yPos - halflength, zPos - halfheight);
+		glVertex3d(xPos + halfwidth, yPos + halflength, zPos - halfheight);
+		glVertex3d(xPos - halfwidth, yPos + halflength, zPos - halfheight);
 
 	//rectangular sides
-	glColor3d(0, 255, 0);
-	glVertex3d(xPos - halfwidth, yPos - halflength, zPos - halfheight);
-	glVertex3d(xPos - halfwidth, yPos + halflength, zPos - halfheight);
-	glVertex3d(xPos, yPos + halflength, zPos + halfheight);
-	glVertex3d(xPos, yPos - halflength, zPos + halfheight);
-
-	glColor3d(0, 0, 255);
-	glVertex3d(xPos + halfwidth, yPos - halflength, zPos - halfheight);
-	glVertex3d(xPos + halfwidth, yPos + halflength, zPos - halfheight);
-	glVertex3d(xPos, yPos + halflength, zPos + halfheight);
-	glVertex3d(xPos, yPos - halflength, zPos + halfheight);
+		glColor3d(25, 100, 0);
+		glVertex3d(xPos - halfwidth, yPos - halflength, zPos - halfheight);
+		glVertex3d(xPos - halfwidth, yPos + halflength, zPos - halfheight);
+		glVertex3d(xPos , yPos + halflength, zPos + halfheight);
+		glVertex3d(xPos , yPos - halflength, zPos + halfheight);
+		
+		glVertex3d(xPos + halfwidth, yPos - halflength, zPos - halfheight);
+		glVertex3d(xPos + halfwidth, yPos + halflength, zPos - halfheight);
+		glVertex3d(xPos, yPos + halflength, zPos + halfheight);
+		glVertex3d(xPos, yPos - halflength, zPos + halfheight);
 	glEnd();
 };
-
-
-
-
-
-
