@@ -1,19 +1,20 @@
 #pragma once
-#ifndef MTRN2500_TRIANGULARPRISM_H
-#define MTRN2500_TRIANGULARPRISM_H
+#ifndef MTRN2500_TRAPPRISM_H
+#define MTRN2500_TRAPPRISM_H
 
 #include "Shape.hpp" 
 
-class TriangularPrism : public Shape {
+class TrapPrism : public Shape {
 
 public:
-	TriangularPrism() {};
-	TriangularPrism(double x, double y, double z, double xLength, double yLength, double zLength );
+	TrapPrism() {};
+	TrapPrism(double x, double y, double z, double xLength, double ytLength, double ybLenth, double zLength);
 	double xLength;
-	double yLength;
+	double ytLength;
+	double ybLength;
 	double zLength;
 	void draw();
 	//void Rotate(double angle);
 };
 
-#endif // !MTRN3500_TRIANGULARPRISM_H
+#endif // !MTRN3500_TRAPPRISM_H
